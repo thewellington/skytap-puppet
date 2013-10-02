@@ -20,31 +20,30 @@ def getJSON(data):
 
 def get_current_metadata():
   response = urllib2.urlopen(url)
-  current_metadata = getJSON(response)
-  result = current_metadata["id"]
-  print result
+  result = getJSON(response)
+  return result
 
 def get_stored_metadata():
   with open(json_path) as infile:
-    stored_metadata = getJSON(infile)
-    result = stored_metadata["id"]
-    print result
-
-
+    result = getJSON(infile)
+    return result
 ###############################################################################    
 # Main Function
 def main ():
 
-# if the file at json_path exists:
-
   current_metadata = get_current_metadata()
-  current_id = 
-
+  current_id = current_metadata["id"]
+  print current_id
+  
+  stored_metadata = get_stored_metadata()
+  stored_id = stored_metadata["id"]
+  print stored_id
+  
 # compare the values
-  if (current_id == stored_id):
-    print ('OK!')
-  else:
-    print ('Something is wrong!')
+#   if (current_id == stored_id):
+#     print ('OK!')
+#   else:
+#     print ('Something is wrong!')
 
 # Call main()
 if __name__ == '__main__':
