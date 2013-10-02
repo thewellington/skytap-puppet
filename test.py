@@ -27,6 +27,17 @@ def get_stored_metadata():
   with open(json_path) as infile:
     result = getJSON(infile)
     return result
+
+# def write_current_metadata():
+#   with open(json_path, 'a') as f:
+#     response = urllib2.urlopen(url)
+#     #json.dump(response, f)
+#     #f.write(str(response))
+#     f.write("this is a test")
+    
+    
+    
+    
 ###############################################################################    
 # Main Function
 def main ():
@@ -44,6 +55,7 @@ def main ():
 #     print ('OK!')
 #   else:
 #     print ('Something is wrong!')
+#     write_current_metadata()
 
 # Call main()
 if __name__ == '__main__':
